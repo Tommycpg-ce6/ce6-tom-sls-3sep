@@ -1,0 +1,27 @@
+# "service" is the name of this project. This will also be added to your AWS resource names.
+service: ce6-tom-serverless
+frameworkVersion: "4"
+
+provider:
+  name: aws
+  stage: prod
+  runtime: nodejs20.x
+  region: ap-southeast-1
+
+functions:
+  tom:
+    handler: handler.august
+    events:
+      - httpApi:
+          path: /tom
+          method: get
+
+  tom2:
+    handler: handler.august
+    events:
+      - httpApi:
+          path: /tom2
+          method: get
+
+plugins:
+  - serverless-offline
