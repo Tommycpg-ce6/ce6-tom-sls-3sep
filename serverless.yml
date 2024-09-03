@@ -20,7 +20,7 @@ functions:
           method: get
 
       - sqs:
-          arn: arn:aws:sqs:ap-southeast-1:ce6-tom
+          arn: arn:aws:sqs:ap-southeast-1:255945442255:ce6-tom
           batchSize: 10
           maximumBatchingWindow: 60
           functionResponseType: ReportBatchItemFailures
@@ -32,14 +32,12 @@ functions:
           path: /tom2
           method: get
 
- tom3:
+  tom3:
     handler: handler.hello3
     events:
       - httpApi:
           path: /tom3
           method: get
-
-
 
 # resources:
 #   Resources:
