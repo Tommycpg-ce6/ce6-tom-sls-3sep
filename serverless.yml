@@ -20,6 +20,12 @@ functions:
           path: /tom
           method: get
 
+        sqs:
+          arn: arn:aws:sqs:ap-southeast-1:ce6-tom
+          batchSize: 10
+          maximumBatchingWindow: 60
+          functionResponseType: ReportBatchItemFailures
+
   tom2:
     handler: handler.august
     events:
