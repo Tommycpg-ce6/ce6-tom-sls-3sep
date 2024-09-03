@@ -4,7 +4,6 @@ org: ce6tommy
 app: ce6-sls-tom-3sep
 # "service" is the name of this project. This will also be added to your AWS resource names.
 service: ce6-tom-serverless
-frameworkVersion: '4'
 
 provider:
   name: aws
@@ -14,7 +13,7 @@ provider:
 
 functions:
   tom:
-    handler: handler.august
+    handler: index.hello
     events:
       - httpApi:
           path: /tom
@@ -25,6 +24,22 @@ functions:
           batchSize: 10
           maximumBatchingWindow: 60
           functionResponseType: ReportBatchItemFailures
+      
+  tom2:
+    handler: handler.hello2
+    events:
+      - httpApi:
+          path: /tom2
+          method: get
+
+ tom3:
+    handler: handler.hello3
+    events:
+      - httpApi:
+          path: /tom3
+          method: get
+
+
 
 # resources:
 #   Resources:

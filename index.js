@@ -17,3 +17,13 @@ exports.hello = async (event) => {
       })
     };
   };
+
+  exports.hello3 = async (event) => {
+    console.log("*****HELLO-2*****")
+    return {
+      statusCode: 200,
+      body: JSON.stringify({
+        message: 'Go Serverless v4.0! Your function executed successfully! Function 2'
+      })
+    };
+  };
